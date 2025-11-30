@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025학년도 학교생활기록부 기재요령 주요 개정사항 (중등)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a4475;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Key Direction Section */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto;
+        }
+
+        .directions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .direction-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--secondary-color);
+            transition: transform 0.3s;
+        }
+
+        .direction-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .direction-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .direction-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Comparison Section */
+        .comparison-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .comparison-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .comparison-body {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            padding: 20px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .comp-box {
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .comp-box.before {
+            border-left: 4px solid #94a3b8;
+        }
+
+        .comp-box.after {
+            border-left: 4px solid var(--accent-color);
+            background-color: #fffbeb;
+        }
+
+        .arrow-icon {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        .comp-title {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .key-point {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Action Plan Section */
+        .action-plan {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .plan-box {
+            padding: 30px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .plan-teacher {
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .plan-student {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+
+        .plan-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .plan-list li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .plan-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .comparison-body {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .arrow-icon { transform: rotate(90deg); margin: 10px 0; }
+            .action-plan { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="badge">2025학년도 개정판</div>
+            <h1>학교생활기록부 기재요령<br>주요 개정사항 (중등)</h1>
+            <p>공정성 강화 · 학교 교육과정 중심 · 제도 변화 반영</p>
+        </header>
+
+        <section>
+            <h2 class="section-title">핵심 개정 방향</h2>
+            <div class="directions">
+                <div class="direction-card">
+                    <i class="fas fa-balance-scale direction-icon"></i>
+                    <h3>법적 근거 명확화</h3>
+                    <p>초·중등교육법 시행규칙 반영 및<br>학적 용어/절차의 통일성 확보</p>
+                </div>
+                <div class="direction-card">
+                    <i class="fas fa-school direction-icon"></i>
+                    <h3>학교 교육과정 중심</h3>
+                    <p>정규 교육과정 내 교사 지도하에<br>이루어진 활동 기록 원칙 강화</p>
+                </div>
+                <div class="direction-card">
+                    <i class="fas fa-user-shield direction-icon"></i>
+                    <h3>책임성 강화</h3>
+                    <p>학교폭력 조치사항 관리 엄격화<br>및 행정 심판/소송 시 절차 정비</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">영역별 상세 변경사항</h2>
+            <div class="comparison-list">
+                
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span><i class="fas fa-gavel"></i> 총론 및 행정</span>
+                    </div>
+                    <div class="comparison-body">
+                        <div class="comp-box before">
+                            <div class="comp-title">2024 (기존)</div>
+                            <p>훈령/지침 위주 근거<br>학적 용어 일부 혼용</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                        <div class="comp-box after">
+                            <div class="comp-title">2025 (변경)</div>
+                            <p><strong>시행규칙 개정 반영</strong><br>자퇴/퇴학 등 용어 명확화</p>
+                            <div class="key-point">📌 법적 안정성 및 행정 통일성 확보</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span><i class="fas fa-user-clock"></i> 출결 및 학교폭력</span>
+                    </div>
+                    <div class="comparison-body">
+                        <div class="comp-box before">
+                            <div class="comp-title">2024 (기존)</div>
+                            <p>조치 결정 통보 즉시 입력<br>기존 졸업 후 보존 기준</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                        <div class="comp-box after">
+                            <div class="comp-title">2025 (변경)</div>
+                            <p><strong>불복 절차(소송 등) 시 관리 요령 구체화</strong><br>중대 조치사항 삭제 요건 강화</p>
+                            <div class="key-point">📌 가해 학생 책임성 및 기록 관리 강화</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span><i class="fas fa-shapes"></i> 창의적 체험활동</span>
+                    </div>
+                    <div class="comparison-body">
+                        <div class="comp-box before">
+                            <div class="comp-title">2024 (기존)</div>
+                            <p>자율탐구 활동 기재 가능<br>(학생 주도성 강조)</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                        <div class="comp-box after">
+                            <div class="comp-title">2025 (변경)</div>
+                            <p><strong>교사 지도하의 정규 과정임이 드러나게</strong><br>자율동아리 기재 요건 엄격 적용</p>
+                            <div class="key-point">📌 사교육 유발 요인 차단 및 공교육 정상화</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span><i class="fas fa-book-open"></i> 교과학습발달 (세특)</span>
+                    </div>
+                    <div class="comparison-body">
+                        <div class="comp-box before">
+                            <div class="comp-title">2024 (기존)</div>
+                            <p>수업 참여도 및 성취 결과 위주</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                        <div class="comp-box after">
+                            <div class="comp-title">2025 (변경)</div>
+                            <p><strong>최소 성취수준 보장 지도 기재 구체화</strong><br>AI 디지털 교과서 대비 활동 예시</p>
+                            <div class="key-point">📌 고교학점제 안착 및 학생 맞춤형 기록</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">대상별 실천 가이드</h2>
+            <div class="action-plan">
+                <div class="plan-box plan-teacher">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> 선생님 (Teachers)</h3>
+                    <ul class="plan-list">
+                        <li><strong>규정 숙지:</strong> 변경된 시행규칙 및 학폭 처리 절차 꼼꼼히 확인</li>
+                        <li><strong>수업 설계:</strong> '세특' 기재를 위한 과정 중심 평가 및 최소 성취수준 지도 계획 수립</li>
+                        <li><strong>증빙 관리:</strong> 기재 내용의 근거가 되는 객관적 자료 철저 보관</li>
+                    </ul>
+                </div>
+                <div class="plan-box plan-student">
+                    <h3><i class="fas fa-user-graduate"></i> 학생 & 학부모 (Students)</h3>
+                    <ul class="plan-list">
+                        <li><strong>수업 집중:</strong> 결과보다 과정, 선생님과 상호작용하는 수업 태도 중요</li>
+                        <li><strong>학폭 예방:</strong> 조치사항 기록 및 삭제가 엄격해짐을 인지하고 예방 노력</li>
+                        <li><strong>진로 연계:</strong> 보여주기식 활동보다 학교 교육과정 내에서의 깊이 있는 탐구</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>※ 본 자료는 2025학년도 기재요령 주요 개정사항(중등) 파일을 바탕으로 요약된 인포그래픽입니다.<br>
+            정확한 업무 처리를 위해서는 반드시 교육부/교육청의 최종 지침 원문을 확인하시기 바랍니다.</p>
+            <p>&copy; 2025 School Record Guidelines Infographic</p>
+        </footer>
+    </div>
+
+</body>
+</html>
